@@ -2,19 +2,19 @@
 gtk .ui DSL written in [nickel]
 
 The following ui was decleared in only 59 lines, animations included.
+
 https://user-images.githubusercontent.com/23294184/171616820-ec34d959-20da-4f63-a9bf-3039e5aa82f2.mp4
 
 
 ## Why?
-If you squint hard enough, gtk builder .ui files are configuration files. [nickel] is a programming language created specifically
-to generate configuration files, so I've written a Domain Specific Language in nickel to write .ui files programmatically.
+Frustated by the standard .ui file writing experience (that xml is very verbose) and inspired by the [blueprint compiler](https://gitlab.gnome.org/jwestman/blueprint-compiler), I've decided to write a custom Domain Specific Language to generate .ui files. If you squint hard enough, gtk builder .ui files are configuration files. [nickel] is a programming language created specifically to generate configuration files. Because of that, I've decided to write the DSL in nickel.
 
 ## Example
 See the [examples directory](./examples) or the example below.
 
 This will generate the ui you can see in the video above.
+Notice: this file is ~60 lines long, while the generated .ui file is 305 lines long. This DSL will drastically reduce the code you need to write :).
 
-Notice: this file is ~60 lines long, while the generated .ui file will be 305 lines long :).
 ```nickel
 let {to_builder_xml, template, child_type, build, style, attributes, signal, margins, ..} = import "../ui_builder.ncl" in
 let Gtk = build "Gtk" in
@@ -78,6 +78,7 @@ to_builder_xml ([
 ```
 
 This python file builds the widget from the .ui file.
+
 ```py
 @Gtk.Template(filename='./src/window.ui')
 class NickeltestWindow(Gtk.ApplicationWindow):

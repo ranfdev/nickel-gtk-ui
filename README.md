@@ -1,5 +1,5 @@
 # nickel-gtk-ui
-gtk .ui DSL written in [nickel]
+gtk .ui DSL written in [nickel]. - Alpha, test project -
 
 The following ui was decleared in only 59 lines, animations included.
 
@@ -8,6 +8,8 @@ https://user-images.githubusercontent.com/23294184/171616820-ec34d959-20da-4f63-
 
 ## Why?
 Frustated by the standard .ui file writing experience (that xml is very verbose) and inspired by the [blueprint compiler](https://gitlab.gnome.org/jwestman/blueprint-compiler), I've decided to write a custom Domain Specific Language to generate .ui files. If you squint hard enough, gtk builder .ui files are configuration files. [nickel] is a programming language created specifically to generate configuration files. Because of that, I've decided to write the DSL in nickel.
+
+Nickel supports type checks and contract, so this DSL could have type checks in the future.
 
 ## Example
 See the [examples directory](./examples) or the example below.
@@ -89,6 +91,16 @@ class NickeltestWindow(Gtk.ApplicationWindow):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+```
+
+## Get started
+
+- Download [nickel]
+- Run
+```bash
+git clone https://github.com/ranfdev/nickel-gtk-ui.git
+cd nickel-gtk-ui
+nickel export -f examples/titles_bounce_animation.ncl --format raw > generated.ui`
 ```
 
 

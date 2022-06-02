@@ -7,7 +7,7 @@ https://user-images.githubusercontent.com/23294184/171616820-ec34d959-20da-4f63-
 
 
 ## Why?
-Frustated by the standard .ui file writing experience (that xml is very verbose) and inspired by the [blueprint compiler](https://gitlab.gnome.org/jwestman/blueprint-compiler), I've decided to write a custom Domain Specific Language to generate .ui files. Compared to blueprint compiler, this let's you use a complete programming language, with variables and functions, to generate your .ui file. 
+Frustated by the standard .ui file writing experience (that xml is very verbose) and inspired by the [blueprint compiler](https://gitlab.gnome.org/jwestman/blueprint-compiler), I've decided to write a custom Domain Specific Language to generate .ui files. Compared to blueprint compiler, this let's you use a complete programming language, with variables and functions, to generate your ui. 
 
 If you squint hard enough, gtk builder .ui files are configuration files. [nickel] is a programming language created specifically to generate configuration files. Because of that, I've decided to write the DSL in nickel.
 

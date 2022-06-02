@@ -14,6 +14,7 @@ See the [examples directory](./examples) or the example below.
 
 This will generate the ui you can see in the video above.
 
+Notice: this file is ~60 lines long, while the generated .ui file will be 305 lines long :).
 ```nickel
 let {to_builder_xml, template, child_type, build, style, attributes, signal, margins, ..} = import "../ui_builder.ncl" in
 let Gtk = build "Gtk" in
